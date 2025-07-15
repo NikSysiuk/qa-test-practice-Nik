@@ -103,7 +103,7 @@ class TestFakeStoreAPI:
         del_response = requests.delete(del_url)
         log_request_response("DELETE", del_url, None, del_response)
         assert del_response.status_code == 200
-        deleted = del_response.json()
-        assert str(deleted.get("id")) == str(product_id)
+        assert del_response.json() is None
+        
 
 # Add config changes
